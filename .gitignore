@@ -1,0 +1,15 @@
+# ESP-IDF
+build/
+managed_components/
+
+# VS Code
+.vscode/
+
+# Visual Studio / C#
+.vs/
+**/bin/
+**/obj/
+
+# OS
+.DS_Store
+Thumbs.db
