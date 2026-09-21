@@ -178,12 +178,12 @@ void pid_control_task(void *pvParameters) {
         // Sai số
         float error = (float)local_config.target_rpm - current_rpm;
 
-        // Khâu tích phân
+        // Khâu tích phân I[k] = I[k-1] + e[k] * dt
         integral += error * 0.01f;
         if (integral > 500.0f) integral = 500.0f;
         if (integral < -500.0f) integral = -500.0f;
 
-        // Khâu vi phân
+        // Khâu vi phân D[k] = (e[k] - e[k-1]) / dt
         derivative = (error - prev_error) / 0.01f;
         if (derivative > 500.0f) derivative = 500.0f;
         if (derivative < -500.0f) derivative = -500.0f;
